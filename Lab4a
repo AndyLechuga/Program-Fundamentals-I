@@ -1,0 +1,96 @@
+
+
+counter = 0
+#greets user
+print("Hello Rob, this is a unit converter I made for you." + '\n')
+
+#gives user 3 total chances to input correct value per metric conversion
+while counter <=2:
+
+    #asks user to input value in miles and saves it as a variable
+    miles = float(input("How many miles would you like to convert to kilometers?: ") + '\n')
+
+    #add if function to exclude negative input values
+    if miles >= 0:
+        #converts miles to km by multiplying input by 1.6
+        mtokm = miles * 1.6
+
+        #tells user new unit value based on given input value for miles
+        print("Rob", miles, "is about ","%.2f" % mtokm, "isnt that awesome!" + '\n')
+
+        # unit converter continues
+        #ask user to input value of gallons and saves it as variable
+        Farenheit = float(input("How many degrees of Farenheit do you want to convert to C?: "))
+
+        #add if function to exclude negative input values for gallons
+        if Farenheit <= 1000:
+
+            # convert F to C based on given value
+            celcius = (Farenheit - 32) * (5/9)
+
+            #tells user new unit value based on given input for gallons
+            print("Rob", Farenheit, "is about ", '%.2f' %celcius, "isnt that awesome!" + '\n')
+
+            #unit converter continues
+            #ask user to input value for Farenheit
+            gallons = float(input("How many gallons do you want to convert to liters?: "))
+
+            #added if function to exclue inputs greater than 1000
+            if gallons >= 0:
+
+                #converts gallons to liters based on given input value
+                liters = (gallons * 3.9)
+
+                #shows user new input value based on given input for F
+                print("Rob", gallons, "is about ", '%.2f' %liters, "isnt that awesome!" + '\n')
+
+                #unit conveter continues
+                pounds = float(input("How many pounds do you want to convert to kilograms?: "))
+
+                # added if function to exclude inputs less than 0
+                if pounds >= 0:
+                    # convert pounds to kilograms
+                    kilograms = pounds * 0.45
+
+                    # shows user how many kilograms are based on value inputed
+                    print("Rob", pounds, "is about ", '%.2f' %kilograms, "isnt that awesome!" + '\n')
+
+                    #unit converter continues
+                    inches = float(input("How many inches do you want to convert to centimeters?: "))
+
+                    #added if function to exclude inputs less than 0
+                    if inches >= 0:
+                        #converts inches to centimeters
+                        centimers = (inches * 2.54)
+
+                        #shows user centimeters based on value inputed
+                        print("Rob", inches, "is about ", '%.2f' %centimers, "isnt that awesome!" + '\n')
+
+                    # tells user input value is negative and closes program
+                    else:
+                        print("Sorry input value cannot be negative! Please try again.")
+                        counter += 1
+
+                # tells user input value is negative and closes program
+                else:
+                    counter += 1
+                    print("Sorry input value cannot be negative. Please try again.")
+
+            #tells user input value cannot exceed 1,000
+            else:
+                counter += 1
+                print("Sorry input value cannot be negative. Please try again.")
+
+        #tells user input value is negative and closes program
+        else:
+            counter += 1
+            print("Sorry input values cannot be greater than 1,000. Please try again.")
+
+    #tells user input value is negative and closes program
+    else:
+        counter += 1
+        print("Sorry input value cannot be negative please try again.")
+#closes out program out of chances        
+else:
+    print("Out of attempts to input value, rerun program to begin again")
+
