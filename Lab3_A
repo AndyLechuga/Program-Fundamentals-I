@@ -1,0 +1,89 @@
+def main():
+    #greets iser
+    print("Hello Rob, this is a unit converter I made for you.")
+
+    print() # blank space
+
+    # asks user to input value in miles and saves it as a variable
+    miles = float(input("How many miles would you like to convert to kilometers?: "))
+
+    # add if function to exclude negative input values
+    if miles > 0:
+        # variable converts miles to km by multiplying input by 1.6
+        miles_to_kilometers = (miles * 1.6)
+
+        # tells the user how many miles are in kilometers to the second decimal place
+        print('Hey Rob', miles, 'miles is equivalent to %.2f' % miles_to_kilometers, "Kilometers isn't that awesome!")
+
+        print() #blank line
+        # ask user to input value of F and saves it as variable
+        Fahrenheit = float(input("How many degrees of Fahrenheit do you want to convert to Celsius?: "))
+
+        if Fahrenheit < 1000:
+            # converts F to C based on given input value
+            fahrenheit_to_celsius = (Fahrenheit - 32) * (5.0 / 9.0)
+
+            # tells user how many degrees of F is to C to the second decimal place
+            print('Hey Rob', Fahrenheit, 'Fahrenheit is equivalent to %.2f' % fahrenheit_to_celsius, "Celsius isn't that awesome!")
+
+            print()  # blank line
+
+            # unit converter continues
+            # asks user how many gallons he wants to convert to liters
+            gallons = float(input("How many gallons would you like to convert to liters?: "))
+
+            # add if function to exclude negative values.
+            if gallons > 0:
+                # variable below converts gallons to liters
+                gallons_to_liters = (gallons * 3.9)
+
+                # tells user how many gallons are in liters based on input value to the second decimal place
+                print('Hey Rob', gallons, 'gallons is equivalent to %.2f' % gallons_to_liters, "liters isn't that awesome!")
+
+                print()  # blank space
+
+                # unit converter continues
+                # ask user how many pounds he wants to convert
+                pounds = float(input("How many pounds would you like to convert to kilograms?: "))
+
+                # add if function to exclude negative values.
+                if pounds > 0:
+                    # variable below converts pounds to kilograms
+                    pounds_to_kilograms = (pounds * 0.45)
+
+                    # tells user how many pounds are in kilograms based on input value to the second decimal place
+                    print('Hey Rob', pounds, 'pounds is equivalent to %.2f' % pounds_to_kilograms,"kilograms isn't that awesome!")
+
+                    print() # blank space
+
+                    # unit converter continues
+                    # ask user how many inches he wants to convert into centimeters
+                    inches = float(input("How many inches would you like to convert to centimeters?: "))
+
+                    # add if function to exclude negative values.
+                    if inches > 0:
+                        # variable converts inches to centimeters
+                        inches_to_centimeters = (inches * 2.54)
+
+                        # tells user how many inches are in centimeters to the second decimal place
+                        print('Hey Rob', inches, 'inches is equivalent %.2f' % inches_to_centimeters,"centimeters isn't that awesome!")
+
+                    # if value of inches is < 0
+                    else:
+                        # tells user that input value cannot be negative
+                        print("Sorry input values cannot be negative!")
+                # if value of pounds is < 0
+                else:
+                    print("Input value cannot be negative!")
+            # if value of gallons is < 0
+            else:
+                print("Input value cannot be negative!")
+        # if value of F is > 1000
+        else:
+            print("Input value cannot be over 1000!")
+    # if value of miles is < 0
+    else:
+        print("Input value cannot be negative!")
+
+main()
+
