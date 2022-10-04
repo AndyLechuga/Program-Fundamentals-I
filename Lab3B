@@ -1,0 +1,74 @@
+def main():
+    # Ask for employees name
+    name = input('What is your full name?: ')
+
+    print() #blank lines
+
+    # ask for tenure
+    tenure = int(input("How long have you been working for SoftwarePirates?(please answer in months): "))
+
+    print() #blank lines
+
+    # ask for vdays for this month
+    vday = int(input("How many vacation days did you use this month?: "))
+
+    print() #blank lines
+
+    # Asks employee for sales they made for this month
+    sales = float(input('What were your sales for this month?: '))
+
+    base_salary = 2000  # static base salary month
+    comission = 0  # value of sales * comission rate
+    tenurebonus = 0  # changes if tenure >= 60 and sales > 100k
+    deduction = 0  # changes to 200 if vday > 3
+    ratebonus = 0  # Will stay same if tenure < 3
+    comissionrate = 0
+
+    # if functions to calculate comision and rate bonus
+    if 10000 <= sales <= 100000:
+        comissionrate = 0.02
+        comission = sales * comissionrate
+        ratebonus = 0
+    elif 100001 <= sales <= 500000:
+        comissionrate = 0.15
+        comission = sales * comissionrate
+        ratebonus = 1000
+    elif 500001 <= sales <= 1000000:
+        comissionrate = 0.28
+        comission = sales * comissi1onrate
+        ratebonus = 5000
+    elif 1000000 < sales:
+        comissionrate = 0.35
+        comission = sales * comissionrate
+        ratebonus = 100000
+    else:
+        pass
+
+    # function to determine tenure, to give employee a bonus as well as a tenure bonus
+    if tenure < 3:
+        ratebonus = 0
+    elif tenure >= 60 and sales > 100000:
+        tenurebonus = 1000
+    else:
+        pass
+    # function to determine if deduction should be made
+    if vday > 3:
+        deduction = 200
+    else:
+        deduction = 0
+
+    # calcuates grosspay
+    paycheck = base_salary + comission - deduction + ratebonus + tenurebonus
+
+    # prints out information as paystub to employee
+    print('Name:', name)
+    print("Tenure:", tenure, "months.")
+    print("Base Salary:", '${:0,.2f}'.format(base_salary))
+    print("Commission:", '${:0,.2f}'.format(comission))
+    print("Bonus:", '${:0,.2f}'.format(ratebonus))
+    print("Additional Bonus:", '${:0,.2f}'.format(tenurebonus))
+    print('Vacation Days Used:', vday)
+    print("Deductions:", '${:0,.2f}'.format(deduction))
+    print('Total Gross Paycheck:', '${:0,.2f}'.format(paycheck))
+
+main()
