@@ -1,0 +1,40 @@
+#needs format to the 2nd deicimal place
+#needs correct verbiage at the end of each display
+----------------------
+#unit converter
+
+#greets user
+
+print("Hello Rob, this is a unit converter I made for you.")
+#ask user for the value of miles
+miles = float(input("How many miles would you like to convert to kilometers?: "))
+#variable below converts miles to kilometers
+miles_to_kilometers = (miles * 1.6)
+#tells the user how many miles are in kilometers
+print('Hey Rob', miles,'miles is equivalent to', miles_to_kilometers ,'Kilomerters')
+#ask user for value of Fahrenheit
+fahrenheit = float(input("How many degrees in Fahrenheit would you like to convert to celsius?: "))
+#variable below converts F to C
+fahrenheit_to_celsius = (fahrenheit - 32) * (5.0/9.0)
+#tells user how many fahrenheit is in celsius
+print('Hey Rob', fahrenheit, 'Fahrenheit is equivalent to', fahrenheit_to_celsius, 'Celsius')
+#asks user how many gallons he wants to convert to liters
+gallons = float(input("How many gallons would you like to convert to liters?: "))
+#variable below converts gallons to liters
+gallons_to_liters = (gallons * 3.9)
+#tells user how many gallons are in liters
+print('Hey Rob', gallons, 'gallons is equivalent to', gallons_to_liters, 'liters')
+#ask user how many pounds he wants to convert
+pounds = float(input("How many pounds would you like to convert to kilograms?: "))
+#variable below converts pounds to kilograms
+pounds_to_kilograms = (pounds * 0.45)
+#tells user how many pounds are in kilograms
+print('Hey Rob', pounds, 'pounds is equivalent to', pounds_to_kilograms, 'kilograms')
+#ask user for value of inches
+inches = float(input("How many inches would you like to convert to centimeters?: "))
+#converts inches to centimeters
+inches_to_centimeters = (inches * 2.54)
+print('Hey Rob', inches, 'inches is equivalent to', inches_to_centimeters, 'centimeters')
+
+print("Thats cool right!", "However those are the only unit conversions I know how to do.") 
+
