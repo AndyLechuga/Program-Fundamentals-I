@@ -1,0 +1,49 @@
+#Grading Rubic:
+# A = 90-100
+# B = 80-89
+# C = 70-79
+# D = 60-69
+# F = 0-59
+
+#why is this teacher letting the students type in their own grades?
+#
+
+def weight():
+    #calculates total grades
+    sum = 0
+    grade = 0
+    students = 0
+    while grade != -1:
+        grade = int(input("Enter the numeric grade you got on your test: "))
+        # total = total + grade
+        #add if function to stop inputs greater than 100
+        if grade > 100:
+            #ask user to retry again if score is higher than 100
+            print("Invalid number, grade cannot be greater than 100, Please try again.")
+        #add elif function to stop grades that are negative
+        elif  0 > grade and grade != -1:
+            print("Invalid number, grade cannot be negative. Please try again.")
+        # else loop that dispalys sum of grades entered, number of grades entered, average class grade
+        else:
+            if 0 <= grade <= 100:
+                students = students + 1 #flag and keeps tracks of grades entered
+                sum = sum + grade #total grade of all the students added
+                avg = sum / students #average grade of the class
+                print("Students tests entered: ", students) #displays number of tests scores entered
+                print("Total grades count of students scores:", sum) #sum of scores
+                print("Average scores for this class is:", "%.2f" % (avg)) #avg of scores for class
+                if grade >= 90:
+                    print("Your grade is A, you clearly studied well!") #if grade is >90 they get an A and a good job etc
+                elif 80 <= grade <= 89:
+                    print("Your grade is B, you studied!")
+                elif 70 <= grade <= 79:
+                    print("Your grade is C, you need to study!")
+                elif 60 <= grade <= 69:
+                    print("Your grade is D, you need to study more!")
+                elif 0 <= grade <= 59:
+                    print("You made an F! Obviously you did not study!")
+    else:
+        print("You typed -1, so the program will close")
+        #program closes if the user types in a negative number
+
+weight()
