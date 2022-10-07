@@ -1,0 +1,8 @@
+def main():
+    #how big you want the triangles base to be
+    trianglebase = 10
+    #for function, that goes from the length of triangle to 0 by step value of -1
+    for i in range(trianglebase, 0, -1):
+        print("*" * i)
+        
+main()
