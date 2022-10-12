@@ -50,6 +50,7 @@ while counter <= 2:
                                 print("Sorry input value cannot be negative please try again.")
                                 counter += 1
                             else:
+                                pounds_to_kilograms = (pounds * 0.45)
                                 print('Hey Rob', pounds, 'pounds is equivalent to %.2f' % pounds_to_kilograms,
                                       "kilograms isn't that awesome!")
                                 counter = 0
@@ -63,7 +64,4 @@ while counter <= 2:
                                         inches_to_centimeters = (inches * 2.54)
                                         print('Hey Rob', inches, 'inches is equivalent %.2f' % inches_to_centimeters,
                                               "centimeters isn't that awesome!")
-                                        counter = 0
-else:
-    print("Invalid input entered 3 times, program will close.")
-
+                                        counter = 3
