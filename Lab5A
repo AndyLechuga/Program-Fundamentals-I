@@ -1,0 +1,86 @@
+def main():
+    greetings()
+    miles = float(input("how many miles do you want to convert: ") + ' ')
+    milesToKm(miles)
+    Farenheit = float(input("\nHow many degrees of Farenheit do you want to convert to C?: "))
+    FahToCel(Farenheit)
+    gallons = float(input("\nHow many Gallons do you want to convert to Litres?: "))
+    GalToLit(gallons)
+    Pounds = float(input("\nHow many Pounds do you want to convert to Kg?: "))
+    PoundsToKg(Pounds)
+    Inches = float(input("\nHow many Inches do you want to convert to Cm?: "))
+    InchesToCm(Inches)
+
+def greetings():
+    print("Hey Rob this is the unit converter I made for you.")
+
+def milesToKm(miles):
+    counter = 0
+    while counter <= 1:
+        if miles < 0:
+            print("Sorry input values cannot be greater than negative. Please try again.")
+            counter += 1
+            miles = float(input("how many miles do you want to convert: ") + ' ')
+        else:
+            # converts miles to km by multiplying input by 1.6
+            mtokm = miles * 1.6
+            # tells user new unit value based on given input value for miles
+            print("Rob", miles, "is about ", "%.2f" % mtokm, "isnt that awesome!" + ' ')
+            counter = 3
+
+def FahToCel(Farenheit):
+    counter = 0
+    while counter <= 1:
+        if Farenheit > 1000:
+            print("Sorry input values cannot be greater than 1000. Please try again.")
+            Farenheit = float(input("\nHow many degrees of Farenheit do you want to convert to C?: "))
+            counter += 1
+        else:
+            # convert F to C based on given value
+            celcius = (Farenheit - 32) * (5 / 9)
+            # tells user new unit value based on given input for gallons
+            print("Rob", Farenheit, "Farenheit is about ", '%.2f' % celcius, "celcius isnt that awesome!" + ' ')
+            counter = 3
+
+
+def GalToLit(gallons):
+    counter = 0
+    while counter <= 1:
+        if gallons < 0:
+            print("Sorry input values cannot be negative. Please try again.")
+            gallons = float(input("\nHow many Gallons do you want to convert to Litres?: "))
+            counter += 1
+        else:
+            # variable below converts gallons to liters
+            gallons_to_liters = (gallons * 3.9)
+            # tells user how many gallons are in liters based on input value to the second decimal place
+            print('Hey Rob', gallons, 'gallons is equivalent to %.2f' % gallons_to_liters,"liters isn't that awesome!")
+            counter = 3
+
+def PoundsToKg(Pounds):
+    counter = 0
+    while counter <= 1:
+        if Pounds < 0:
+            print("Sorry input values cannot be negative. Please try again.")
+            Pounds = float(input("\nHow many Pounds do you want to convert to Kg?: "))
+            counter += 1
+        else:
+            pounds_to_kilograms = (Pounds * 0.45)
+            print('Hey Rob', Pounds, 'pounds is equivalent to %.2f' % pounds_to_kilograms, \
+            "kilograms isn't that awesome!")
+            counter = 3
+
+def InchesToCm(Inches):
+    counter = 0
+    while counter <= 2:
+        if Inches < 0:
+            print("Sorry input values cannot be negative. Please try again.")
+            Inches = float(input("\nHow many Inches do you want to convert to Cm?: "))
+            counter += 1
+        else:
+            inches_to_centimeters = (Inches * 2.54)
+            print('Hey Rob', Inches, 'inches is equivalent %.2f' % inches_to_centimeters, \
+            "centimeters isn't that awesome!")
+            counter = 3
+
+main()
