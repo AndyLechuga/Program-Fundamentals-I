@@ -1,0 +1,48 @@
+#Random number generator guesser
+
+import random
+import math
+
+def main():
+    #generate randum number
+    number = random.randrange(1,1000)
+    #counts number of tries
+    count = 0
+    #input of guess from user
+    guess = 0
+    play = True
+    #
+    print(number)
+    while guess != number and play is True:
+        #keeps track of tries
+        count += 1
+        # ask user to guess
+        guess = int(input("Guess the number between 1 and 1000: "))
+        #takes difference between the guess and the number
+        diff = guess - number
+        #if the difference between the guess and actual number is more than -10
+        if diff < -10:
+            print("Your guess is too low!")
+        #if the difference between the guess and actual number is more than 10
+        elif diff > 10:
+            print("Your guess is too high!")
+        # if the difference between the guess and actual number is +10 or less
+        elif diff > 0:
+            print("Getting warm but still too high!")
+        # if the difference between the guess and actual number is -10 or less
+        elif diff < 0:
+            print("Getting warm but still too low!")
+    #if the guess is corrrect
+    else:
+        print("You rock! You guessed the number in", count, "tries")
+
+    print()
+    # ask user if they want to try again
+    replay = input("Do you want to play again?(Y/N): ")
+
+    if replay == "N":
+        play = False
+    else:
+        main()
+main()
+
