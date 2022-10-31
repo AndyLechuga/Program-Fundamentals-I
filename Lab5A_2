@@ -1,0 +1,63 @@
+import UnitConvertions
+
+def main():
+    greetings()
+    counter = 0
+    while counter <=2:
+        miles = float(input("How many miles would you like to convert to kilometers?: ") + ' ')
+        if miles < 0:
+            print("Sorry input value cannot be negative please try again.")
+            counter += 1
+        else:
+            print("Rob", miles, "is about ", "%.2f" % UnitConvertions.milesToKm(miles), "isnt that awesome!" + ' ')
+            counter = 0
+            while counter <=2:
+                Farenheit = float(input("How many degrees of Farenheit do you want to convert to C?: "))
+                if Farenheit > 1000:
+                    print("Sorry input values cannot be greater than 1,000. Please try again.")
+                    counter += 1
+                else:
+                    print("Rob", Farenheit, "is about ", \
+                          '%.2f' % UnitConvertions.FahToCel(Farenheit), "isnt that awesome!" + ' ')
+                    counter = 0
+
+                    while counter <= 2:
+                        gallons = float(input("How many gallons would you like to convert to liters?: "))
+                        if gallons < 0:
+                            print("Sorry input value cannot be negative please try again.")
+                            counter += 1
+                        else:
+                            print('Hey Rob', gallons,
+                            'gallons is equivalent to %.2f' % UnitConvertions.GalToLit(gallons),
+                                  "liters isn't that awesome!")
+                            counter = 0
+
+                            while counter <=2:
+                                pounds = float(input("How many pounds would you like to convert to kilograms?: "))
+                                if pounds < 0:
+                                    print("Sorry input value cannot be negative please try again.")
+                                    counter += 1
+                                else:
+                                    print('Hey Rob', pounds, \
+                                          'pounds is equivalent to %.2f' % UnitConvertions.PoundsToKg(pounds), \
+                                          "kilograms isn't that awesome!")
+                                    counter = 0
+
+                                    while counter <=2:
+                                        inches = float(input("How many inches would you like to convert to centimeters?: "))
+                                        if inches < 0:
+                                            print("Sorry input value cannot be negative please try again.")
+                                            counter += 1
+                                        else:
+                                            print('Hey Rob', inches, \
+                                                  'inches is equivalent %.2f' % UnitConvertions.InchesToCm(inches),
+                                                  "centimeters isn't that awesome!")
+                                            counter = 3
+
+    print("Out of chances")
+
+
+def greetings():
+    print("Hey Rob this is the unit converter I made for you.")
+
+main()
