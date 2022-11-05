@@ -1,0 +1,133 @@
+conversionfile = open("conversions.txt", "w")
+def main():
+    #greeting
+    greetings()
+    try:
+        i = 0
+        while i <= 9:
+            # display menu
+            menu()
+            selection = input("Enter Menu Selection (a-e): ")
+            if selection == "a":
+                optiona()
+                i += 1
+            elif selection == "b":
+                optionb()
+                i += 1
+            elif selection == "c":
+                optionc()
+                i += 1
+            elif selection == "d":
+                optiond()
+                i += 1
+            elif selection == "e":
+                optione()
+                i += 1
+            else:
+                print("Invalid Selection, Please try again!")
+        conversionfile.close()
+    except IOError:
+        print("File not found.")
+    except ValueError:
+        print("****Please make a valid selection.*******")
+    except:
+        print("An error was found.")
+
+
+    finally:
+        print("Program will now close as there was 10 iterations")
+
+def greetings():
+    print("Hey Rob this is the unit converter I made for you.")
+
+def menu():
+    print("\nPlease type the lower case letter associated with the conversion you would like to solve.")
+    print("a. Miles to Kilometers")
+    print("b. Gallons to Liters")
+    print("c. Pounds to Kilograms")
+    print("d. Inches to centimeters")
+    print("e. Fahrenheit to Celsius\n")
+
+
+
+def optiona():
+    counter = 0
+    while counter <= 2:
+        miles = float(input("How many miles would you like to convert to kilometers?: ") + ' ')
+        if miles < 0:
+            print("Sorry input value cannot be negative please try again.")
+            counter += 1
+        else:
+            mtokm = miles * 1.6
+            print("Rob", miles, "is about ", "%.2f" % mtokm, "isnt that awesome!" + ' ')
+
+            conversionfile.write("Original value: " + str('%.2f'%miles) + " Original unit: Miles" '\n' +
+            "Converted value: " + str('%.2f'%mtokm) + " Converted unit: Kilometers" '\n''\n')
+            counter = 3
+
+def optionb():
+    counter = 0
+    while counter <= 2:
+        gallons = float(input("How many gallons would you like to convert to liters?: "))
+        if gallons < 0:
+            print("Sorry input value cannot be negative please try again.")
+            counter += 1
+        else:
+            liters = (gallons * 3.9)
+            print('Hey Rob', gallons, 'gallons is equivalent to %.2f' % liters, "liters isn't that awesome!")
+
+            conversionfile.write("Original value: " + str('%.2f'%gallons) + " Original unit: Gallons" '\n' + \
+                                 "Converted value: " + str('%.2f'%liters) + " Converted unit: Liters" '\n''\n')
+            counter = 3
+
+def optionc():
+    counter = 0
+    while counter <= 2:
+        pounds = float(input("How many pounds would you like to convert to kilograms?: "))
+        if pounds < 0:
+            print("Sorry input value cannot be negative please try again.")
+            counter += 1
+        else:
+            kilograms = (pounds * 0.45)
+            print('Hey Rob', pounds, 'pounds is equivalent to %.2f' % kilograms, \
+                  "kilograms isn't that awesome!")
+            conversionfile.write("Original value: " + str('%.2f'%pounds) + " Original unit: Pounds" '\n' + \
+                                 "Converted value: " + str('%.2f'%kilograms) + " Converted unit: Kilograms" '\n''\n')
+
+            counter = 3
+
+def optiond():
+    counter = 0
+    while counter <= 2:
+        inches = float(input("How many inches would you like to convert to centimeters?: "))
+        if inches < 0:
+            print("Sorry input value cannot be negative please try again.")
+            counter += 1
+        else:
+            centimeters = (inches * 2.54)
+            print('Hey Rob', inches, \
+                  'inches is equivalent %.2f' % centimeters, "centimeters isn't that awesome!")
+            conversionfile.write("Original value: " + str('%.2f'%inches) + " Original unit: Inches" '\n' + \
+            "Converted value: " + str('%.2f'%centimeters) + " Converted unit: Centimeters" '\n''\n')
+            counter = 3
+
+
+
+def optione():
+    counter = 0
+    while counter <= 2:
+        Farenheit = float(input("How many degrees of Farenheit do you want to convert to C?: "))
+        if Farenheit > 1000:
+            print("Sorry input values cannot be greater than 1,000. Please try again.")
+            counter += 1
+        else:
+            celcius = (Farenheit - 32) * (5 / 9)
+            print("Rob", Farenheit, "is about %.2f" % celcius, " celcius isnt that awesome!" + ' ')
+
+            conversionfile.write("Original value: " + str('%.2f'%Farenheit) + " Original unit: Inches" '\n' + \
+                                "Converted value: " + str('%.2f'%celcius) + " Converted unit: Centimeters" '\n''\n')
+            counter = 3
+
+main()
+
+
